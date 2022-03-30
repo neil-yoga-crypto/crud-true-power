@@ -57,9 +57,9 @@ let result = await crud.mongo.connectWithClient(dbname); // returns both dbs and
 
 #### Crud.http (for your websites)
 ```
-let result = await crud.http.create(url,data,authValue=null);
-let result = await crud.http.read function(url,authValue=null);
-let result = await crud.http.update(url,data,authValue=null);
-let result = await crud.http.delete(url,authValue=null);
+let result = await crud.http.create(url,data,authValue=null); // authValue sets "Authorization" header for account specific actions
+let result = await crud.http.read function(url,authValue=null); // authValue sets "Authorization" header for account specific actions
+let result = await crud.http.update(url,data,authValue=null); // authValue sets "Authorization" header for account specific actions
+let result = await crud.http.delete(url,authValue=null); // authValue sets "Authorization" header for account specific actions
 ```	
 
