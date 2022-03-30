@@ -25,18 +25,6 @@ console.log('your files, deleted, but fortunately just from MongoDb: ',
 console.log((await crud.http.read("https://duckduckgo.com?q=movie-the-matrix-imdb")));
 ```
 
-
-### Bonus Demo: Writing your own libraries
-```
-const mylibraries = {"ssh": {"read":function(){ return "todo" }}};
-// ^ You can even extend crud with your own libraries like this
-
-const mycrud = require("./crud-true-power")(mylibraries);
-// ^ And importing it like this
-
-console.log(mycrud.ssh.read());                                  
-```
-
 ## crud.fs (for your file systems)
 ```
 let result = crud.fs.create(path,fcontent=null) // creates file if 2nd parameter is not null, otherwise creates directory
@@ -77,5 +65,16 @@ mv crud* ../ # move files to your project, so you can require crud with ./
 ### Test
 ```
 ./node_modules/jest/bin/jest.js
+```
+
+### Bonus: Writing your own libraries
+```
+const mylibraries = {"ssh": {"read":function(){ return "todo" }}};
+// ^ You can even extend crud with your own libraries like this
+
+const mycrud = require("./crud-true-power")(mylibraries);
+// ^ And importing it like this
+
+console.log(mycrud.ssh.read());                                  
 ```
 
