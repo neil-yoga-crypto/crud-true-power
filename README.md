@@ -1,7 +1,7 @@
-```
-// True Power is Create, Read, Update and Delete.
+## True Power is Create, Read, Update and Delete.
 
-// Demo: Effortlessly transition between different data interfaces
+### Demo: Effortlessly transition between different data interfaces
+```
 const crud = require("./crud-tp")(); const dbs = await crud.mongo.connect('tp-crud-testdb') // Set & setting
 
 console.log('your files: ', crud.fs.read()) 
