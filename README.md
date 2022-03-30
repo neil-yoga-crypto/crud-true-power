@@ -45,16 +45,6 @@ let result = crud.fs.update(src,dst) // moves a file or directory
 let result = crud.fs.delete(path) // deletes a file or directory
 ```
 
-
-#### Crud.http (for your websites)
-```
-let result = await crud.http.create(url,data,authValue=null);
-let result = await crud.http.read function(url,authValue=null);
-let result = await crud.http.update(url,data,authValue=null);
-let result = await crud.http.delete(url,authValue=null);
-```	
-
-
 #### Crud.mongo (for your MongoDB)
 ```
 let result = await crud.mongo.connect(dbname) // returns dbs (client.db())
@@ -64,3 +54,12 @@ let result = await crud.mongo.update = function(dbs, collection, criteria={}, it
 let result = await crud.mongo.delete(dbs, collection, criteria={}, justOne=false);
 let result = await crud.mongo.connectWithClient(dbname); // returns both dbs and client {"dbs":..,"client":""} in case you need to close the connection using client.close()
 ```
+
+#### Crud.http (for your websites)
+```
+let result = await crud.http.create(url,data,authValue=null);
+let result = await crud.http.read function(url,authValue=null);
+let result = await crud.http.update(url,data,authValue=null);
+let result = await crud.http.delete(url,authValue=null);
+```	
+
