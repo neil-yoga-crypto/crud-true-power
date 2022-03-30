@@ -56,15 +56,11 @@ let result = await crud.http.delete(url,authValue=null);
 
 
 #### Crud.mongo (for your MongoDB)
+```
 let result = await crud.mongo.connect(dbname) // returns dbs (client.db())
 let result = await crud.mongo.create(dbs,collection, itemorlist, extra_options={}) // extra_options {"allow_id":1} will preserve _ids of the item or list items
 let result = await crud.mongo.read(dbs, collection, criteria={}, justOne=false, extra_options={}) // when string is given criteria transforms to {_id:new ObjectId()}. extra_options
 let result = await crud.mongo.update = function(dbs, collection, criteria={}, itemorlist, justOne=false, extra_options={}) // extra_options: {"no_date":1} will prevent updating last_updated field with latest timestamp
 let result = await crud.mongo.delete(dbs, collection, criteria={}, justOne=false);
 let result = await crud.mongo.connectWithClient(dbname); // returns both dbs and client {"dbs":..,"client":""} in case you need to close the connection using client.close()
-
-
-
-
-let result = await lib.update(url)
-let result = await crud.http.delete(url)
+```
