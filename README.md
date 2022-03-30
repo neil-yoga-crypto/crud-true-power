@@ -65,7 +65,7 @@ let result = await crud.http.delete(url,authValue=null); // authValue sets "Auth
 
 
 ### Install
-NPM package coming soon. For now, you can install it in your project using git clone:
+Yarn and NPM packages coming soon. For now, you can install it in your project using git clone:
 ```
 git clone https://github.com/neil-yoga/crud-tp
 mv crud-tp* . # move files to your project so you can require them with ./
