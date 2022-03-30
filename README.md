@@ -23,8 +23,11 @@ console.log('your files, deleted, but fortunately just from MongoDb: ',
 
 // Also works for the internet on friendly receptive websites and API's
 console.log((await crud.http.read("https://duckduckgo.com?search=movie-the-matrix-imdb")).substring(0, 30));
+```
 
-// Bonus Demo: Writing your own libraries
+
+### Bonus Demo: Writing your own libraries
+```
 const mylibraries = {"ssh": {"read":function(){ return "todo" }}};
 // ^ You can even extend crud with your own libraries like this
 
