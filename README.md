@@ -63,3 +63,16 @@ let result = await crud.http.update(url,data,authValue=null); // authValue sets 
 let result = await crud.http.delete(url,authValue=null); // authValue sets "Authorization" header for account specific actions
 ```	
 
+
+### Install
+In your project
+```
+git clone https://github.com/neil-yoga/crud-tp
+mv crud-tp* . # move files to your project so you can require them with ./
+```
+
+### Test
+```
+./node_modules/jest/bin/jest 
+```
+
