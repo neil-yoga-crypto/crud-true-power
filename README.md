@@ -73,6 +73,6 @@ mv crud-true-power/crud* . # move files to your project so you can require them 
 
 ### Test
 ```
-./node_modules/jest/bin/jest 
+./node_modules/jest/bin/jest.js
 ```
 
