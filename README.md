@@ -56,7 +56,7 @@ let result = await crud.http.delete(url,authValue=null); // authValue sets "Auth
 Yarn and NPM packages coming soon. For now, you can install it in your project using git clone:
 ```
 git clone https://github.com/neil-yoga/crud-true-power
-cd crud-true-power && npm install // install dependencies
+cd crud-true-power && npm install # install dependencies
 
 # Optionally
 mv crud* ../ # move files to your project, so you can require crud with ./
