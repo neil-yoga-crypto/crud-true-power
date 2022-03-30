@@ -37,7 +37,7 @@ const mycrud = require("./crud-true-power")(mylibraries);
 console.log(mycrud.ssh.read());                                  
 ```
 
-## Crud.fs (for your file systems)
+## crud.fs (for your file systems)
 ```
 let result = crud.fs.create(path,fcontent=null) // creates file if 2nd parameter is not null, otherwise creates directory
 let result = crud.fs.read(path) // returns a file's content or the files of a directory as a list
@@ -45,7 +45,7 @@ let result = crud.fs.update(src,dst) // moves a file or directory
 let result = crud.fs.delete(path) // deletes a file or directory
 ```
 
-## Crud.mongo (for your MongoDB)
+## crud.mongo (for your MongoDB)
 ```
 let result = await crud.mongo.connect(dbname) // returns dbs (client.db())
 let result = await crud.mongo.create(dbs,collection, itemorlist, extra_options={}) // extra_options {"allow_id":1} will preserve _ids of the item or list items
@@ -55,7 +55,7 @@ let result = await crud.mongo.delete(dbs, collection, criteria={}, justOne=false
 let result = await crud.mongo.connectWithClient(dbname); // returns both dbs and client {"dbs":..,"client":""} in case you need to close the connection using client.close()
 ```
 
-## Crud.http (for your websites)
+## crud.http (for your websites)
 ```
 let result = await crud.http.create(url,data,authValue=null); // authValue sets "Authorization" header for account specific actions
 let result = await crud.http.read function(url,authValue=null); // authValue sets "Authorization" header for account specific actions
