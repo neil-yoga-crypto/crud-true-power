@@ -75,6 +75,6 @@ const mylibraries = {"ssh": {"read":function(){ return "todo" }}};
 const mycrud = require("./crud-true-power")(mylibraries);
 // ^ And importing it like this
 
-console.log(mycrud.ssh.read());                                  
+console.log(mycrud.ssh.read()); // should output todo 
 ```
 
