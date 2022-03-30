@@ -67,7 +67,7 @@ mv crud* ../ # move files to your project, so you can require crud with ./
 ./node_modules/jest/bin/jest.js
 ```
 
-### Bonus: Writing your own libraries
+### Bonus: Write your own libraries
 ```
 const mylibraries = {"ssh": {"read":function(){ return "todo" }}};
 // ^ You can even extend crud with your own libraries like this
@@ -78,3 +78,18 @@ const mycrud = require("./crud-true-power")(mylibraries);
 console.log(mycrud.ssh.read()); // should output todo 
 ```
 
+### Bonus: Keep things alive
+```
+// Enjoy the free code sharing. 
+//
+// ☯️ If you used my code to save time, consider donating crypto:
+// - Bitcoin (most popular): bc1q6ledh5rs4s33qk6hf5uqg3dh5rv3mvjdc996rh
+// - Nano (zero fees): nano_3boxqk5q56xsz8ufrw9srrz4pta6ffbkrg9j31aqziz8wtnr6j68ci7s4cnc
+// - Monery (good privacy): 47C8tUyXYTN7AyH22dNFgnEYoMLTQhZvLZRtoj2XYG4PA5fsLohYeGxb6ULS1TSEPU768nXkW1n5XKyiiMeciNVeBwfRHjf
+//
+// It matters: Everything is an energy exchange ⚡.
+//
+//
+// ^ Also feel free to copy this template for your own projects and replace the wallets.
+// 🙏 You deserve to be happy and free.
+```
