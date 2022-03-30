@@ -2,7 +2,7 @@
 
 ### Demo: Effortlessly transition between different data interfaces
 ```
-const crud = require("./crud-tp")(); const dbs = await crud.mongo.connect('tp-crud-testdb') 
+const crud = require("./crud-true-power")(); const dbs = await crud.mongo.connect('tp-crud-testdb') 
 
 console.log('your files: ', crud.fs.read()) 
 // ^ reads your files from the current directory on your file system
@@ -31,7 +31,7 @@ console.log((await crud.http.read("https://duckduckgo.com?q=movie-the-matrix-imd
 const mylibraries = {"ssh": {"read":function(){ return "todo" }}};
 // ^ You can even extend crud with your own libraries like this
 
-const mycrud = require("./crud-tp")(mylibraries);
+const mycrud = require("./crud-true-power")(mylibraries);
 // ^ And importing it like this
 
 console.log(mycrud.ssh.read());                                  
