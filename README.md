@@ -2,7 +2,7 @@
 
 ### Demo: Effortlessly transition between different data interfaces
 ```
-const crud = require("./crud-true-power")(); const dbs = await crud.mongo.connect('tp-crud-testdb') 
+const crud = require("./crud-true-power")(); const dbs = await crud.mongo.connect('tp-crud-testdb'); 
 
 console.log('your files: ', crud.fs.read()) 
 // ^ reads your files from the current directory on your file system
