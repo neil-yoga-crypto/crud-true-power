@@ -25,6 +25,13 @@ module.exports.connectWithClient = function(dbname) {
     return connectwithclientfn(dbname);
 }
 
+// Returns items that have keyword in collection.searchField 
+
+module.exports.search = function(dbs,collection,searchField, keyword, additional_criteria={}) {
+    return searchfn(dbs,collection,searchField, keyword, additional_criteria);
+}
+
+
 
 function createfn(dbs,collection,itemOrList,extra_options={}){
  	if(isList(itemOrList)) {
@@ -96,7 +103,7 @@ async function readfn(dbs, collection,criteria={}, justOne=false, extra_options=
   	// transforms String and _id:String keys to _id:ObjectId
     const t1_criteria = transformCriteria(criteria);
   	if(justOne) {
-       return findOne(dbs, collection, t1_criteria);
+       return findOne(dbs, collection, t1_criteria, extra_options);
      } else {
         return readmanyfn(dbs,collection,t1_criteria,extra_options);		
      }
@@ -115,9 +122,8 @@ async function readmanyfn(dbs,collection,criteria,extra_options={}) {
 }
 
 
-function findOne(dbs, collection, criteria) {
+function findOne(dbs, collection, criteria, extra_options={}) {
       return new Promise((resolve, reject) => {
-          // throw Error("criteria: " + criteria);
           dbs.collection(collection).findOne(criteria, function(err, result) {
               if (err) {
                   reject(err);
@@ -192,20 +198,24 @@ function deleteonefn(dbs,collection,criteria) {
 const ObjectId = require('mongodb').ObjectId;
 const MongoClient = require('mongodb').MongoClient;
 
-async function connectfn(dbname, dburl = "mongodb://localhost:27017") {
- return await MongoClient.connect(dburl + "/" + dbname, { useNewUrlParser: true, useUnifiedTopology: true }).then((client)=>{
- 	return client.db()
- }).catch((err)=>{
- 	throw err
- });
+function connectfn(dbname, dburl = "mongodb://localhost:27017") {
+      return new Promise((resolve, reject) => {
+         MongoClient.connect(dburl + "/" + dbname, { useNewUrlParser: true, useUnifiedTopology: true }).then((client)=>{
+            resolve(client.db())
+         }).catch((err)=>{
+            reject(err);
+         });
+      });
 }
 
-async function connectwithclientfn(dbname, dburl = "mongodb://localhost:27017") {
- return await MongoClient.connect(dburl + "/" + dbname, { useNewUrlParser: true, useUnifiedTopology: true }).then((client)=>{
- 	return {"dbs":client.db(),"client":client};
- }).catch((err)=>{
- 	throw err
- });
+function connectwithclientfn(dbname, dburl = "mongodb://localhost:27017") {
+ return new Promise((resolve, reject) => {
+      MongoClient.connect(dburl + "/" + dbname, { useNewUrlParser: true, useUnifiedTopology: true }).then((client)=>{
+              resolve({"dbs":client.db(),"client":client})
+      }).catch((err)=>{
+              reject(err);
+      });
+    });
 }
 // transforms String and _id keys to {"_id":ObjectId(_id)} 
 function transformCriteria(criteria){
@@ -245,4 +255,25 @@ function isList(obj) {
 }
 function isObject(obj) {
     return obj.constructor == Object;
+}
+// from https://stackoverflow.com/questions/3115150/how-to-escape-regular-expression-special-characters-using-javascript
+function escapeRegexfn(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
+// Returns items that have keyword in collection.searchField 
+function searchfn(dbs,collection,searchField, keyword, additional_criteria={}) {
+        const t1_criteria = transformCriteria(additional_criteria);
+        t1_criteria[searchField] = new RegExp(escapeRegexfn(keyword),'gi');
+       return new Promise(function(resolve, reject) { 
+        dbs.collection(collection).find(t1_criteria).toArray(function(err, result) {
+            if (err) {
+                return reject(err);
+            } else {
+                return resolve(result);
+            }
+        });
+
+        
+             }); 
 }
