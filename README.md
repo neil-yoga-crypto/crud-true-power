@@ -82,10 +82,8 @@ console.log(mycrud.ssh.read()); // should output todo
 ```
 // Enjoy the free code sharing. 
 //
-// ☯️ If you used my code to save time, consider donating crypto:
-// - Bitcoin (most popular): bc1q6ledh5rs4s33qk6hf5uqg3dh5rv3mvjdc996rh
-// - Nano (zero fees): nano_3boxqk5q56xsz8ufrw9srrz4pta6ffbkrg9j31aqziz8wtnr6j68ci7s4cnc
-// - Monery (good privacy): 47C8tUyXYTN7AyH22dNFgnEYoMLTQhZvLZRtoj2XYG4PA5fsLohYeGxb6ULS1TSEPU768nXkW1n5XKyiiMeciNVeBwfRHjf
+// ☯️ If you used my code to save time, consider donating eco-friendly crypto:
+// - <a href="https://nano.org">Nano (zero fees)</a>: nano_3boxqk5q56xsz8ufrw9srrz4pta6ffbkrg9j31aqziz8wtnr6j68ci7s4cnc
 //
 // It matters: Everything is an energy exchange ⚡.
 //
