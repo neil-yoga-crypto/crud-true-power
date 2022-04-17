@@ -82,8 +82,8 @@ console.log(mycrud.ssh.read()); // should output todo
 ```
 // Enjoy the free code sharing. 
 //
-// ☯️ If you used my code to save time, consider donating eco-friendly crypto:
-// - Nano (zero fees): 
+// ☯️ If you used my code to save time,
+//  consider donating eco-friendly crypto:
 ```
 
 ```
