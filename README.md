@@ -83,7 +83,7 @@ console.log(mycrud.ssh.read()); // should output todo
 // Enjoy the free code sharing. 
 //
 // ☯️ If you used my code to save time, consider donating eco-friendly crypto:
-// - <a href="https://nano.org">Nano (zero fees)</a>: nano_3boxqk5q56xsz8ufrw9srrz4pta6ffbkrg9j31aqziz8wtnr6j68ci7s4cnc
+// - Nano (zero fees): nano_3boxqk5q56xsz8ufrw9srrz4pta6ffbkrg9j31aqziz8wtnr6j68ci7s4cnc
 //
 // It matters: Everything is an energy exchange ⚡.
 //
@@ -91,3 +91,6 @@ console.log(mycrud.ssh.read()); // should output todo
 // ^ Also feel free to copy this template for your own projects and replace the wallets.
 // 🙏 You deserve to be happy and free.
 ```
+
+### Nano?
+<a style="color:black;font-size:15px;" href="https://nano.org">Zero Fees, Eco-Friendly, Instant Payments</a>
